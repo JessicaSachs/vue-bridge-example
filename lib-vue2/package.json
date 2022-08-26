@@ -1,0 +1,64 @@
+{
+  "name": "example-vue-library-vue2",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && pnpm build-types",
+    "build-watch": "vite build --watch",
+    "build-types": "vue-tsc --declaration --emitDeclarationOnly -p ../tsconfig/tsconfig.vue2.lib.json",
+    "tsc-watch": "vue-tsc --watch",
+    "test": "vitest --reporter=verbose --run",
+    "test-watch": "vitest --reporter=verbose"
+  },
+  "type": "module",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.es.mjs",
+  "jsdelivr": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
+  "typings": "./typings/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./typings/main.d.ts",
+      "script": "./dist/index.umd.js",
+      "import": "./dist/index.es.mjs",
+      "require": "./dist/index.cjs.cjs",
+      "default": "./dist/index.umd.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./package.json": "./package.json",
+    "./src/": "./src/",
+    "./typings/": "./typings/"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "browserslist": [
+    "IE 11, >3%, last 2 versions"
+  ],
+  "dependencies": {
+    "@swc/helpers": "^0.4.3",
+    "@vue-bridge/runtime": "^0.1.1",
+    "core-js": "^3.23.5",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^1.1.2",
+    "@vue-bridge/testing": "^0.2.1",
+    "@vue-bridge/vite-plugin": "^0.2.0",
+    "@vue/test-utils": "^1.3.0",
+    "browserslist": "^4.21.2",
+    "vite": "^3.0.2",
+    "vue": "^2.7.8",
+    "vue-template-compiler": "^2.7.8"
+  },
+  "peerDependencies": {
+    "vue": "^2.7"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  }
+}
